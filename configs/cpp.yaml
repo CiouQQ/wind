@@ -1,0 +1,36 @@
+environment:
+    type: "CPP"
+gamma: 0.99
+lamda: 0.99
+updates: 5000
+epochs: 5
+n_workers: 8
+worker_steps: 160
+n_mini_batch: 4
+value_loss_coefficient: 0.3
+hidden_layer_size: 750
+max_grad_norm: 0.5
+transformer:
+    num_blocks: 5
+    embed_dim: 750
+    num_heads: 75
+    memory_length: 40
+    positional_encoding: "relative" # options: "" "relative" "learned"
+    layer_norm: "pre" # options: "" "pre" "post"
+    gtrxl: True
+    gtrxl_bias: 0.0
+learning_rate_schedule:
+    initial: 5.5e-4
+    final: 1.0e-10
+    power: 1.0
+    max_decay_steps: 4500
+beta_schedule:
+    initial: 0.1
+    final: 0.00001
+    power: 1.0
+    max_decay_steps: 4500
+clip_range_schedule:
+    initial: 0.1
+    final: 0.1
+    power: 1.0
+    max_decay_steps: 1800
